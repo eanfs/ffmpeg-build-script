@@ -7,7 +7,7 @@ ARG CUDAVER=11.8.0-1
 ENV DEBIAN_FRONTEND noninteractive
 ENV NVIDIA_VISIBLE_DEVICES all
 ENV NVIDIA_DRIVER_CAPABILITIES compute,utility,video
-
+RUN echo "deb http://mirrors.aliyun.com/ubuntu/ jammy main restricted universe multiverse\ndeb-src http://mirrors.aliyun.com/ubuntu/ jammy main restricted universe multiverse\ndeb http://mirrors.aliyun.com/ubuntu/ jammy-security main restricted universe multiverse\ndeb-src http://mirrors.aliyun.com/ubuntu/ jammy-security main restricted universe multiverse\ndeb http://mirrors.aliyun.com/ubuntu/ jammy-updates main restricted universe multiverse\ndeb-src http://mirrors.aliyun.com/ubuntu/ jammy-updates main restricted universe multiverse\ndeb http://mirrors.aliyun.com/ubuntu/ jammy-proposed main restricted universe multiverse\ndeb-src http://mirrors.aliyun.com/ubuntu/ jammy-proposed main restricted universe multiverse\ndeb http://mirrors.aliyun.com/ubuntu/ jammy-backports main restricted universe multiverse\ndeb-src http://mirrors.aliyun.com/ubuntu/ jammy-backports main restricted universe multiverse" > /etc/apt/sources.list
 RUN apt-get update \
     && apt-get -y --no-install-recommends install wget ca-certificates \
     && update-ca-certificates \
@@ -33,6 +33,7 @@ ENV NVIDIA_VISIBLE_DEVICES all
 ENV NVIDIA_DRIVER_CAPABILITIES compute,utility,video
 
 # install va-driver
+RUN echo "deb http://mirrors.aliyun.com/ubuntu/ jammy main restricted universe multiverse\ndeb-src http://mirrors.aliyun.com/ubuntu/ jammy main restricted universe multiverse\ndeb http://mirrors.aliyun.com/ubuntu/ jammy-security main restricted universe multiverse\ndeb-src http://mirrors.aliyun.com/ubuntu/ jammy-security main restricted universe multiverse\ndeb http://mirrors.aliyun.com/ubuntu/ jammy-updates main restricted universe multiverse\ndeb-src http://mirrors.aliyun.com/ubuntu/ jammy-updates main restricted universe multiverse\ndeb http://mirrors.aliyun.com/ubuntu/ jammy-proposed main restricted universe multiverse\ndeb-src http://mirrors.aliyun.com/ubuntu/ jammy-proposed main restricted universe multiverse\ndeb http://mirrors.aliyun.com/ubuntu/ jammy-backports main restricted universe multiverse\ndeb-src http://mirrors.aliyun.com/ubuntu/ jammy-backports main restricted universe multiverse" > /etc/apt/sources.list
 RUN apt-get update \
     && apt-get -y install libva-drm2 \
     && apt-get clean; rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /usr/share/doc/*
