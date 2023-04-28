@@ -900,7 +900,7 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
   fi
 
   if build "amf" "1.4.29"; then
-    download 'https://xde-installer.obs.cn-east-3.myhuaweicloud.com/ffmpeg-build/v1.4.29.tar.gz' 'AMF-1.4.29.tar.gz' 'AMF-1.4.29'
+    download 'https://xde-installer.obs.cn-east-3.myhuaweicloud.com/ffmpeg-build/AMF-v1.4.29.tar.gz' 'AMF-1.4.29.tar.gz' 'AMF-1.4.29'
     execute rm -rf "${WORKSPACE}/include/AMF"
     execute mkdir -p "${WORKSPACE}/include/AMF"
     execute cp -r "${PACKAGES}"/AMF-1.4.29/AMF-1.4.29/amf/public/include/* "${WORKSPACE}/include/AMF/"
