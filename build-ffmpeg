@@ -919,7 +919,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 fi
 
 build "ffmpeg" "$FFMPEG_VERSION"
-download "https://xde-installer.obs.cn-east-3.myhuaweicloud.com/ffmpeg-build/$FFMPEG_VERSION.tar.gz" "FFmpeg-release-$FFMPEG_VERSION.tar.gz"
+download "https://xde-installer.obs.cn-east-3.myhuaweicloud.com/ffmpeg-build/FFmpeg-release-$FFMPEG_VERSION.tar.gz" "FFmpeg-release-$FFMPEG_VERSION.tar.gz"
 # shellcheck disable=SC2086
 ./configure "${CONFIGURE_OPTIONS[@]}" \
   --disable-debug \
